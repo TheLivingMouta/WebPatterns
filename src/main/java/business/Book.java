@@ -1,22 +1,24 @@
 package business;
 
 
+import java.io.Serializable;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
-public class Book {
+public class Book implements Serializable {
 
   private int bookid;
   private String title;
-  private Date date;
+  private LocalDate date;
   private String author;
-  private Date rentaldate;
+  private LocalDate rentaldate;
 
 
   public Book() {
   }
 
-  public Book(int bookid, String title, Date date, String author, Date rentaldate) {
+  public Book(int bookid, String title, LocalDate date, String author, LocalDate rentaldate) {
     this.bookid = bookid;
     this.title = title;
     this.date = date;
@@ -40,11 +42,11 @@ public class Book {
     this.title = title;
   }
 
-  public Date getDate() {
+  public LocalDate getDate() {
     return date;
   }
 
-  public void setDate(Date date) {
+  public void setDate(LocalDate date) {
     this.date = date;
   }
 
@@ -56,11 +58,11 @@ public class Book {
     this.author = author;
   }
 
-  public Date getRentaldate() {
+  public LocalDate getRentaldate() {
     return rentaldate;
   }
 
-  public void setRentaldate(Date rentaldate) {
+  public void setRentaldate(LocalDate rentaldate) {
     this.rentaldate = rentaldate;
   }
 

@@ -10,8 +10,7 @@ public class User {
   private String phone;
   private String firstname;
   private String lastname;
-  
-  
+
 
   public User() {
   }
@@ -84,28 +83,21 @@ public class User {
 
   @Override
   public String toString() {
-    return "User{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            ", email='" + email + '\'' +
-            ", password='" + password + '\'' +
-            ", phone='" + phone + '\'' +
-            ", firstname='" + firstname + '\'' +
-            ", lastname='" + lastname + '\'' +
-            '}';
+    return "User{" + "id=" + id + ", name='" + name + '\'' + ", email='" + email + '\'' + ", password='" + password + '\'' + ", phone='" + phone + '\'' + ", firstname='" + firstname + '\'' + ", lastname='" + lastname + '\'' + '}';
   }
 
   public boolean equals(Object object) {
     if (this == object) return true;
     if (object == null || getClass() != object.getClass()) return false;
     if (!super.equals(object)) return false;
-    Users users = (Users) object;
+    User users = (User) object;
     return id == users.id;
   }
-
-  public int hashCode() {
-    return Objects.hash(super.hashCode(), id);
-  }
 }
+
+//  public int hashCode() {
+//    return Objects.hash(super.hashCode(), id);
+//  }
+//}
 
 
