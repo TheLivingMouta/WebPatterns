@@ -10,7 +10,21 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * This class provides data access methods for interacting with the library database.
+ *
+ * @author Oran
+ */
+
 public class BookDao extends Dao implements BookDaoInterface{
+
+    /**
+     * Retrieve a list of books with an exact title match.
+     *
+     * @param title The exact title to search for.
+     * @return A list of books matching the title.
+     * @throws DaoException If a data access error occurs.
+     */
 
     @Override
     public ArrayList<Book> selectBooksByTitle(String title) throws DaoException {
@@ -59,6 +73,15 @@ public class BookDao extends Dao implements BookDaoInterface{
         return books;
     }
 
+    /**
+     * Retrieve a list of books containing the specified title as a substring.
+     *
+     * @param title The title substring to search for.
+     * @return A list of books containing the specified title.
+     * @throws DaoException If a data access error occurs.
+     */
+
+
     @Override
     public ArrayList<Book> selectBookContainingTitle(String title) throws DaoException {
         Connection con = null;
@@ -106,6 +129,13 @@ public class BookDao extends Dao implements BookDaoInterface{
         return books;
     }
 
+    /**
+     * Retrieve a list of books by a specific author.
+     *
+     * @param author The author's name to search for.
+     * @return A list of books by the specified author.
+     * @throws DaoException If a data access error occurs.
+     */
 
     @Override
     public ArrayList<Book> findBookByAuthor(String author) throws DaoException {
@@ -153,6 +183,13 @@ public class BookDao extends Dao implements BookDaoInterface{
         }
         return books;
     }
+
+    /**
+     * Retrieve a list of all books in the database.
+     *
+     * @return A list of all books in the database.
+     * @throws DaoException If a data access error occurs.
+     */
 
     @Override
     public ArrayList<Book> searchAllBooks() throws DaoException {

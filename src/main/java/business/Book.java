@@ -1,22 +1,36 @@
 package business;
 
-
 import java.io.Serializable;
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Objects;
 
+/**
+ * Represents a Data Transfer Object (DTO) for a book with various attributes such as book ID, title, publication date, author, and rental date.
+ *
+ * @author Oran
+ */
 public class Book implements Serializable {
-
   private int bookid;
   private String title;
   private LocalDate date;
   private String author;
   private LocalDate rentaldate;
 
-
+  /**
+   * Default constructor for the Book DTO.
+   */
   public Book() {
   }
+
+  /**
+   * Parameterized constructor to initialize a Book DTO with specific values.
+   *
+   * @param bookid     The unique identifier for the book.
+   * @param title      The title of the book.
+   * @param date       The date the book was added to the library.
+   * @param author     The author of the book.
+   * @param rentaldate The date when the book was rented.
+   */
 
   public Book(int bookid, String title, LocalDate date, String author, LocalDate rentaldate) {
     this.bookid = bookid;
@@ -68,7 +82,6 @@ public class Book implements Serializable {
 
   @Override
   public String toString() {
-
     return "Book{" +
             "bookid=" + bookid +
             ", title='" + title + '\'' +
@@ -77,7 +90,6 @@ public class Book implements Serializable {
             ", rentaldate=" + rentaldate +
             '}';
   }
-
 
   @Override
   public boolean equals(Object o) {

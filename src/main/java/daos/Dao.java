@@ -6,7 +6,21 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * This class provides methods for managing database connections.
+ *
+ * @author Oran
+ */
+
 public class Dao {
+
+    /**
+     * Establish a database connection.
+     *
+     * @return A database connection object.
+     * @throws DaoException If a data access error occurs.
+     */
+
     public Connection getConnection() throws DaoException {
 
         String driver = "com.mysql.cj.jdbc.Driver";
@@ -27,6 +41,13 @@ public class Dao {
         }
         return con;
     }
+
+    /**
+     * Free and close the database connection.
+     *
+     * @param con The database connection to be closed.
+     * @throws DaoException If an error occurs while closing the connection.
+     */
 
     public void freeConnection(Connection con) throws DaoException {
         try {
