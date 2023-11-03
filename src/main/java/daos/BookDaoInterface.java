@@ -18,6 +18,10 @@ public interface BookDaoInterface {
     //    Get the book matching the specified book Author.
     public ArrayList<Book> findBookByAuthor(String author)throws DaoException;
 
+//    Return all the books in the library
+    public ArrayList<Book> searchAllBooks()throws DaoException;
+
+
 
 }
 

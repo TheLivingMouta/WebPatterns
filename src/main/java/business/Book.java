@@ -68,6 +68,7 @@ public class Book implements Serializable {
 
   @Override
   public String toString() {
+
     return "Book{" +
             "bookid=" + bookid +
             ", title='" + title + '\'' +
@@ -76,6 +77,7 @@ public class Book implements Serializable {
             ", rentaldate=" + rentaldate +
             '}';
   }
+
 
   @Override
   public boolean equals(Object o) {

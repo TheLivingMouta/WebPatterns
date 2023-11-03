@@ -16,6 +16,7 @@ public class ViewBooks {
         System.out.println("How would you like to search?\nPlease press the corresponding button");
         System.out.println("1) Title");
         System.out.println("2) Author");
+        System.out.println("3) View all books");
        int option = sc.nextInt();
 
         if(option == 1) {
@@ -31,6 +32,10 @@ public class ViewBooks {
             String author = sc.nextLine();
             findBookByAuthor(author);
         }
+        if(option == 3) {
+            searchAllBooks();
+        }
+
 
     }
     public static void selectBooksByTitle(String title) throws DaoException {
@@ -89,6 +94,25 @@ public class ViewBooks {
             System.out.println("Error " + e.getMessage());
         }
 
+    }
+
+    public static void searchAllBooks() throws DaoException {
+        try {
+
+            BookDaoInterface dao = new BookDao();
+
+            List<Book> books = dao.searchAllBooks();
+            if (books.isEmpty()) {
+                System.out.println("There are no books int the library");
+            } else {
+                for (Book b : books) {
+                    System.out.println(b);
+
+                }
+            }
+        } catch (DaoException e) {
+            System.out.println("Error " + e.getMessage());
+        }
     }
 }
 
