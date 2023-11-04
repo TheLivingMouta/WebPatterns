@@ -54,6 +54,9 @@ public interface BookDaoInterface {
 
     public ArrayList<Book> searchAllBooks()throws DaoException;
 
+    public boolean addBook(Book b) throws DaoException;
+
+
 
 
 }

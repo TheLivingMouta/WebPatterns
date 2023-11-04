@@ -3,10 +3,7 @@ package daos;
 import business.Book;
 import exceptions.DaoException;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -16,7 +13,7 @@ import java.util.ArrayList;
  * @author Oran
  */
 
-public class BookDao extends Dao implements BookDaoInterface{
+public class BookDao extends Dao implements BookDaoInterface {
 
     /**
      * Retrieve a list of books with an exact title match.
@@ -237,5 +234,49 @@ public class BookDao extends Dao implements BookDaoInterface{
         return books;
     }
 
+    @Override
+    public boolean addBook(Book b) throws DaoException{
+
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int rowsAffected = -1;
+        try {
+            con = getConnection();
+
+            //language=MySQL
+            String query = "INSERT INTO books(bookid, title, date, author, rentaldate) VALUES (?, ?, ?, ?, ?)";
+            ps = con.prepareStatement(query);
+
+            ps.setInt(1, b.getBookid());
+            ps.setString(2, b.getTitle());
+            ps.setDate(3, Date.valueOf(b.getDate()));
+            ps.setString(4, b.getAuthor());
+            ps.setDate(5, Date.valueOf(b.getRentaldate()));
+
+        rowsAffected = ps.executeUpdate();
+
+
+        } catch (SQLException e) {
+            throw new DaoException("selectBooksByTitle(): " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    freeConnection(con);
+                }
+            } catch (SQLException e) {
+                throw new DaoException("selectBooksByTitle(): " + e.getMessage());
+            }
+        }
+        return rowsAffected > 0;
+    }
 }
+
+
 
