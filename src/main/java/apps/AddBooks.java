@@ -5,11 +5,17 @@ import daos.BookDao;
 import daos.BookDaoInterface;
 import exceptions.DaoException;
 
-import java.time.Clock;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
+
+/**
+ * This class allows users to input book details and adds them to the database.
+ * The details include book ID, title, author, and rental date.
+ *
+ * @author Oran
+ */
 
 public class AddBooks {
     public static void main(String[] args) throws DaoException {
@@ -47,11 +53,20 @@ public class AddBooks {
                 System.out.println("Invalid date format used. Please try again");
             }
         }
-//        TODO add timestamp to both dates
 
         AddBook(bookid, title, currentDate, author, rentalDate);
 
     }
+    /**
+     * Adds a book to the database.
+     *
+     * @param bookid      The unique ID of the book.
+     * @param title       The title of the book.
+     * @param currentDate The current date when the book is added.
+     * @param author      The author of the book.
+     * @param rentalDate  The date when the book was rented.
+     * @throws DaoException If a data access error occurs.
+     */
 
     public static void AddBook(int bookid, String title ,LocalDate currentDate,  String author, LocalDate rentalDate) throws DaoException {
 
