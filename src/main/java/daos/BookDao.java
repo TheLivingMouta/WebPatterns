@@ -234,6 +234,12 @@ public class BookDao extends Dao implements BookDaoInterface {
         return books;
     }
 
+    /**
+     * Adds a book into the database.
+     *
+     * @return A list of all books in the database.
+     * @throws DaoException If a data access error occurs.
+     */
     @Override
     public boolean addBook(Book b) throws DaoException{
 
