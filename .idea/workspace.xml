@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cea7072-b5ce-43f0-a236-b37b30470f39" name="Changes" comment="JavaDocs for User Class and the creation of the UserRegistration application">
-      <change afterPath="$PROJECT_DIR$/src/main/java/daos/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/daos/UserDaoInterface.java" afterDir="false" />
+    <list default="true" id="0cea7072-b5ce-43f0-a236-b37b30470f39" name="Changes" comment="Creation of the UserDaoInterface and the UserDao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/UserRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/UserRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daos/UserDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/UserDaoInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +78,7 @@
       <workItem from="1699013773012" duration="1000" />
       <workItem from="1699209825471" duration="734000" />
       <workItem from="1699210601333" duration="146000" />
-      <workItem from="1699210948817" duration="6471000" />
+      <workItem from="1699210948817" duration="8285000" />
     </task>
     <task id="LOCAL-00001" summary="JavaDocs for User Class and the creation of the UserRegistration application">
       <option name="closed" value="true" />
@@ -87,7 +88,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699219941753</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Creation of the UserDaoInterface and the UserDao">
+      <option name="closed" value="true" />
+      <created>1699222655365</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699222655365</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +115,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="JavaDocs for User Class and the creation of the UserRegistration application" />
-    <option name="LAST_COMMIT_MESSAGE" value="JavaDocs for User Class and the creation of the UserRegistration application" />
+    <MESSAGE value="Creation of the UserDaoInterface and the UserDao" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creation of the UserDaoInterface and the UserDao" />
   </component>
 </project>

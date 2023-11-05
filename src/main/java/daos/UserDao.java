@@ -8,6 +8,10 @@ import exceptions.DaoException;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * @author Brian
+ */
+
 public class UserDao extends Dao implements UserDaoInterface{
 
     /**

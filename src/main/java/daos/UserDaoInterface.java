@@ -5,6 +5,10 @@ import exceptions.DaoException;
 
 import java.util.ArrayList;
 
+/**
+ * @author Brian
+ */
+
 public interface UserDaoInterface{
 
     /**
